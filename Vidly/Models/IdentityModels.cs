@@ -1,5 +1,8 @@
 ﻿using System.Data.Entity;
+using System.Dynamic;
+using System.Security.AccessControl;
 using System.Security.Claims;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -20,6 +23,7 @@ namespace Vidly.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -29,5 +33,9 @@ namespace Vidly.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Vidly.Models.Customer> Customers { get; set; }
+
+        public System.Data.Entity.DbSet<Vidly.Models.Movie> Movies { get; set; }
     }
 }
