@@ -3,7 +3,6 @@ using System.Dynamic;
 using System.Security.AccessControl;
 using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
